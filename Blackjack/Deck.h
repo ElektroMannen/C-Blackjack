@@ -42,8 +42,8 @@ void init_deck(){
 
 void deck_print(){
     printf("======== Deck ========\n");
-    for(int8_t i = 0; i < sizeof(deck)/sizeof(deck[0]); i++){
-        printf("%s \n", deck[i]);
+    for(int8_t i = 0; i < sizeof(deck)/sizeof(deck[0]); i += 2){
+        printf("%s, %s\n", deck[i],deck[i+1]);
     }
 }
 
@@ -63,10 +63,10 @@ void deck_pull_card(){
 void deck_shuffle(){
     srand(time(NULL));
     for (int i = 0; i < sizeof(deck)/sizeof(deck[0]); ++i){
-    int j = rand() % (sizeof(deck)/sizeof(deck[0])-i) + i;
-    char* temp = deck[i];
-    deck[i] = deck[j];
-    deck[j] = temp;
+        int j = rand() % (sizeof(deck)/sizeof(deck[0])-i) + i;
+        char* temp = deck[i];
+        deck[i] = deck[j];
+        deck[j] = temp;
     }
 }
 

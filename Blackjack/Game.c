@@ -1,6 +1,6 @@
 /*
 
-Author: Borgas
+Author: Ottar
 Purpose:
 Blackjack game made by me for to help me learn and get used to programming in C
 */

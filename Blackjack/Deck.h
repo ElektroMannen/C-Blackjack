@@ -1,3 +1,4 @@
+
 /*This is where we define the playing card deck*/
 #include <stdint.h>
 #include <string.h>
@@ -81,3 +82,45 @@ void print_cards(){
     }
 }
 
+int card_value(char* card){
+    
+    if(strstr(card,"Ace") != NULL){
+        return 1;
+    }
+    if(strstr(card,"Two") != NULL){
+        return 2;
+    }
+    if(strstr(card,"Three") != NULL){
+        return 3;
+    }
+    if(strstr(card,"Four") != NULL){
+        return 4;
+    }
+    if(strstr(card,"Five") != NULL){
+        return 5;
+    }
+    if(strstr(card,"Six") != NULL){
+        return 6;
+    }
+    if(strstr(card,"Seven") != NULL){
+        return 7;
+    }
+    if(strstr(card,"Eight") != NULL){
+        return 8;
+    } 
+    if(strstr(card,"Nine") != NULL){
+        return 9;
+    } 
+    if(strstr(card,"Ten") != NULL){
+        return 10;
+    } 
+    if(strstr(card,"Jack") != NULL){
+        return 10;
+    } 
+    if(strstr(card,"Queen") != NULL){
+        return 10;
+    } 
+    if(strstr(card,"King") != NULL){
+        return 10;
+    }
+}

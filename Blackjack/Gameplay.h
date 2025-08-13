@@ -7,7 +7,6 @@
 
 /* TO DO: 
 - Deal to players
-- Get card value
 - Let player hit for more cards
 - Make the rules
 */

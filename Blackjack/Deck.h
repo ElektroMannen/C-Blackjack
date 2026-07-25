@@ -1,3 +1,4 @@
+
 /*This is where we define the playing card deck*/
 #include <stdint.h>
 #include <string.h>
@@ -42,8 +43,15 @@ void init_deck(){
 
 void deck_print(){
     printf("======== Deck ========\n");
-    for(int8_t i = 0; i < sizeof(deck)/sizeof(deck[0]); i++){
-        printf("%s \n", deck[i]);
+    for(int8_t i = 0; i < sizeof(deck)/sizeof(deck[0]); i += 2){
+        printf("%s, %s\n", deck[i],deck[i+1]);
+    }
+}
+
+void hand_print(char* hand){
+    printf("======== Hand ========\n");
+    for(int8_t i = 0; i < sizeof(hand)/sizeof(hand[0]); i += 1){
+        printf("%s\n", hand[i]);
     }
 }
 
@@ -63,10 +71,10 @@ void deck_pull_card(){
 void deck_shuffle(){
     srand(time(NULL));
     for (int i = 0; i < sizeof(deck)/sizeof(deck[0]); ++i){
-    int j = rand() % (sizeof(deck)/sizeof(deck[0])-i) + i;
-    char* temp = deck[i];
-    deck[i] = deck[j];
-    deck[j] = temp;
+        int j = rand() % (sizeof(deck)/sizeof(deck[0])-i) + i;
+        char* temp = deck[i];
+        deck[i] = deck[j];
+        deck[j] = temp;
     }
 }
 
@@ -81,3 +89,45 @@ void print_cards(){
     }
 }
 
+int card_value(char* card){
+    
+    if(strstr(card,"Ace") != NULL){
+        return 1;
+    }
+    if(strstr(card,"Two") != NULL){
+        return 2;
+    }
+    if(strstr(card,"Three") != NULL){
+        return 3;
+    }
+    if(strstr(card,"Four") != NULL){
+        return 4;
+    }
+    if(strstr(card,"Five") != NULL){
+        return 5;
+    }
+    if(strstr(card,"Six") != NULL){
+        return 6;
+    }
+    if(strstr(card,"Seven") != NULL){
+        return 7;
+    }
+    if(strstr(card,"Eight") != NULL){
+        return 8;
+    } 
+    if(strstr(card,"Nine") != NULL){
+        return 9;
+    } 
+    if(strstr(card,"Ten") != NULL){
+        return 10;
+    } 
+    if(strstr(card,"Jack") != NULL){
+        return 10;
+    } 
+    if(strstr(card,"Queen") != NULL){
+        return 10;
+    } 
+    if(strstr(card,"King") != NULL){
+        return 10;
+    }
+}

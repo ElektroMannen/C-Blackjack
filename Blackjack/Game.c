@@ -1,6 +1,6 @@
 /*
 
-Author: Borgas
+Author: Ottar
 Purpose:
 Blackjack game made by me for to help me learn and get used to programming in C
 */
@@ -27,8 +27,8 @@ void menu(){
         printf("1. Play\n");
         printf("2. Balance\n");
         printf("3. \n");
-        printf("4. \n");
-        printf("5. \n");
+        printf("4. Dealer hand\n");
+        printf("5. Player hand\n");
         printf("6. Shuffle deck\n");
         printf("7. Pull a card from the deck\n");
         printf("8. View deck\n");
@@ -40,6 +40,10 @@ void menu(){
         scanf("%d",&choice);
 
         switch (choice){
+            case 5:
+                printf("Card value is %d\n",card_value());
+                break;
+
             case 6:
                 deck_shuffle();
                 break;
